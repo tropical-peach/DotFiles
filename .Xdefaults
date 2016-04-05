@@ -82,12 +82,8 @@ URxvt.keysym.Control-Shift-N: perl:tabbedex:prev_tab
 !URxvt.keysym.Control-Shift-Left: perl:tabbedex:move_tab_left
 !URxvt.keysym.Control-Shift-Right: perl:tabbedex:move_tab_right
 !URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
-!--- ~/.Xresources ------------------------------------------------------------
-! ------------------------------------------------------------------------------
-! --- generated with 4bit Terminal Color Scheme Designer -----------------------
-! ------------------------------------------------------------------------------
-! --- http://ciembor.github.com/4bit -------------------------------------------
-! ------------------------------------------------------------------------------
+
+
 
 *faceName: Source Code Pro for Powerline:size=11:antialias=true
 

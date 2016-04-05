@@ -3,7 +3,7 @@ highlight Normal ctermfg=grey ctermbg=black
 set background=dark
 let asmsyntax='armasm' 
 let filetype_inc='armasm'
-set tabstop=4
+set tabstop=2
 set shiftwidth=4
 set number 
 set ai
