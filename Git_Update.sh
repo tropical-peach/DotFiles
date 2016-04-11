@@ -15,6 +15,7 @@ cp  ~/.zshrc ./
 cp ~/.bashrc ./
 cp ~/.tmux.conf ./
 cp -r ~/.i3  ./
+cp -r ~/bin ./
 
 git commit -am "Updated DotFiles via script"
 git push origin master

@@ -15,6 +15,8 @@ git pull origin master
 cp .vimrc ~/ 
 cp .Xdefaults ~/ 
 cp .Xresources ~/ 
+cp .tmux.conf ~/
 cp .zshrc ~/ 
 cp -r .config ~/ 
-cp -r .i3 ~/ 
+cp -r .i3 ~/
+cp -r bin ~/bin
