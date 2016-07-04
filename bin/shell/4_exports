@@ -1,0 +1,44 @@
+#
+# ██████████                           
+#░░░░░██░░░                            
+#    ░██      █████  ██████ ██████████ 
+#    ░██     ██░░░██░░██░░█░░██░░██░░██
+#    ░██    ░███████ ░██ ░  ░██ ░██ ░██
+#    ░██    ░██░░░░  ░██    ░██ ░██ ░██
+#    ░██    ░░██████░███    ███ ░██ ░██
+#    ░░      ░░░░░░ ░░░    ░░░  ░░  ░░ 
+# ████████                                   ██          
+#░██░░░░░          ██████                   ░██          
+#░██       ██   ██░██░░░██  ██████  ██████ ██████  ██████
+#░███████ ░░██ ██ ░██  ░██ ██░░░░██░░██░░█░░░██░  ██░░░░ 
+#░██░░░░   ░░███  ░██████ ░██   ░██ ░██ ░   ░██  ░░█████ 
+#░██        ██░██ ░██░░░  ░██   ░██ ░██     ░██   ░░░░░██
+#░████████ ██ ░░██░██     ░░██████ ░███     ░░██  ██████ 
+#░░░░░░░░ ░░   ░░ ░░       ░░░░░░  ░░░       ░░  ░░░░░░  
+#
+#
+#
+
+
+
+
+#Environments  
+export EDITOR=vim
+export PAGER=less
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+
+export LM_LICENSE_FILE=2100@ece46sql01.ece.unm.edu
+export XILINXD_LICENSE_FILE=2100@ece46sql01.ece.unm.edu
+export HISTFILE=~/.shell_history
+export HISTSIZE=1000
+export SAVEHIST=$HISTSIZE
+
+#------------------------------------------////
+# System Information:
+#------------------------------------------////
+clear
+echo -ne "${blue}Today is:\t\t${lightgreen}" `date`; echo ""
+echo -e "${blue}Kernel Information: \t${cyan}" `uname -smr`
+echo -ne "${purple}";upinfo;echo ""
+echo -e "${blue}"; cal -3

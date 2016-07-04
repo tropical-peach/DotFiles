@@ -114,27 +114,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+source ~/bin/shell_functions
 
-#alises
 
 
-alias s="fetch \
-	--block_range 1 8 \
-	--line_wrap off \
-	--bold off \
-	--uptime_shorthand on \
-	--gtk_shorthand on \
-	--image /home/steven/Dropbox/Wallpapers/Icons/miku_rift.png \
-	--image_position right \
-	--size 10% \
-	"
-
-alias desk='cd ~'
-alias dload='cd ~/Downloads/'
-alias update='apt-get update'
-alias upgrade='apt-get dist-upgrade'
-alias r-bash='source ~/.bashrc'
-alias date='date | toilet --termwidth --gay -f future'
 
 
 bash_prompt_command() {
@@ -197,7 +180,10 @@ bash_prompt() {
     local UC=$W                 # user's color
     [ $UID -eq "0" ] && UC=$R   # root's color
  
-    PS1="\e[48;5;129;38;5;87;5m\t \e[0m\e[25m @ \e[48;5;89;38;5;52m・ー ・$TITLEBAr \e[0m\r\n"
+	#PS1="\e[48;5;129;38;5;87;5m\t \e[0m\e[25m @ \e[48;5;89;38;5;52m $(pwd) $TITLEBAr \e[0m\r\n"
+
+
+	PS1="#${fg_lgray}%n@${at_bold}%m${at_boldoff}${fg_dgray}[${fg_white}%~${fg_dgray}] #[${fg_white}%T${fg_dgray}]:${at_normal}"
 	# without colors: PS1="[\u@\h \${NEW_PWD}]\\$ "
     # extra backslash in front of \$ to make bash colorize the prompt
 }
@@ -205,3 +191,15 @@ bash_prompt() {
 PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
+
+
+if [ -d ~/bin/shell ]; then
+		cd ~/bin/shell
+		for i in $(ls -1); do
+				source $i
+		done
+		cd ~
+		unset i
+fi
+
+
