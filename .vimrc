@@ -87,6 +87,9 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 "
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
+
+" Use by selecting all text which you desire to align.
+" Then use `:` `Tabularize /{symbol to align on}`
 function! s:align()
 	let p = '^\s*|\s.*\s|\s*$'
 	if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
