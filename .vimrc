@@ -36,6 +36,9 @@ Plugin 'sudar/vim-arduino-syntax'
 "Plugin 'quark-zju/vim-cpp-auto-include'
 Plugin 'godlygeek/tabular'
 Plugin 'rdnetto/YCM-Generator', {'branch' : 'stable'}
+Plugin 'szw/vim-tags'
+"	Open nerd tree with F9
+Plugin 'scrooloose/nerdtree'
 
 
 
@@ -66,6 +69,18 @@ let Tlist_Use_Right_Window = 1
 "	setlocal linebreak 
 "endfu 
 "com! WP call WordProcessorMode()
+
+
+"
+"	Vim tags
+"
+let g:vim_tags_ignore_files = ['.gitignore', '.svnignore', '.cvsignore', 'Docs']
+set autochdir
+set tags=./tags,tags;$HOME
+" Ctrl + \  :: open in new tab
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" Alt + ] 	:: open in Vertical split
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 "
 " tpope gist to automatically maintain tabs while typing
@@ -129,6 +144,30 @@ nmap <F9> :NERDTreeToggle<CR>
 
 :map <C-h> :MBEbp<CR>
 :map <C-l> :MBEbn<CR>
+
+
+" use :call SwapWords({'foo':'bar'}) to swap
+" foo with bar and bar with foo.
+" NOTE: 
+" If one of your words contains a /, you have to pass in a delimiter
+" which you know none of your words contains, .e.g
+" :call SwapWords({'foo/bar':'foo/baz'}, '@')
+" 
+function! SwapWords(dict, ...)
+		let words = keys(a:dict) + values(a:dict)
+		let words = map(words, 'escape(v:val, "|")')
+		if(a:0 == 1)
+				let delimiter = a:1
+		else
+				let delimiter = '/'
+		endif
+		let pattern = '\v(' . join(words, '|') . ')'
+		exe '%s' . delimiter . pattern . delimiter
+								\ . '\=' . string(Mirror(a:dict)) . '[S(0)]'
+								\ . delimiter . 'g'
+endfunction
+
+
 
 
 filetype plugin on
