@@ -63,7 +63,6 @@ urxvt*mouseWheelScrollPage: true
 
 
 !starting Dir
-urxvt*chdir:/home/steven/
 
 !Extendos
 URxvt.perl-ext-common: default,matcher,tabbedex,clipboard

@@ -87,9 +87,6 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 "
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
-
-" Use by selecting all text which you desire to align.
-" Then use `:` `Tabularize /{symbol to align on}`
 function! s:align()
 	let p = '^\s*|\s.*\s|\s*$'
 	if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
@@ -171,6 +168,13 @@ function! SwapWords(dict, ...)
 endfunction
 
 
+" tmux will send xterm-style keys when its xterm-keys option is on
+if &term =~ '^screen'
+		execute "set <xUp>=\e[1;*A"
+		execute "set <xDown>=\e[1;*B"
+		execute "set <xRight>=\e[1;*C"
+		execute "set <xLeft>=\e[1;*D"
+endif
 
 
 filetype plugin on

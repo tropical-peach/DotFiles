@@ -2,6 +2,14 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+#if [ -d ~/bin/shell ]; then
+#		cd ~/bin/shell
+#		for i in $(ls -1); do
+#						source $i
+#		done
+#		unset i
+#fi
+
 
 # If not running interactively, don't do anything
 case $- in
@@ -73,6 +81,8 @@ xterm*|rxvt*)
     ;;
 esac
 
+PS1='[\u@\h \w] \D{%F %T}\n\$ '
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -114,92 +124,21 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source ~/bin/shell_functions
+## Vivado 
+#/opt/Xilinx/Vivado/2015.4/settings64.sh
+#export XILINXD_LICENSE_FILE=2100@sp-bbz2zp1-lt.ensco.win
+#export PATH=/opt/Xilinx/Vivado/2015.4/bin:$PATH
+#
+## Vivado SDK
+#/opt/Xilinx/SDK/2015.4/settings64.sh
+#export PATH=/opt/Xilinx/SDK/2015.4/bin:$PATH
+
+# Petalinux
+# 2013.04
+#source /opt/pkg/petalinux-v2013.04-final-full/settings.sh
+# 2015.4
+#source /opt/pkg/petalinux-v2015.4-final/settings.sh
 
 
-
-
-
-bash_prompt_command() {
-    # How many characters of the $PWD should be kept
-    local pwdmaxlen=25
-    # Indicate that there has been dir truncation
-    local trunc_symbol=".."
-    local dir=${PWD##*/}
-    pwdmaxlen=$(( ( pwdmaxlen < ${#dir} ) ? ${#dir} : pwdmaxlen ))
-    NEW_PWD=${PWD/#$HOME/\~}
-    local pwdoffset=$(( ${#NEW_PWD} - pwdmaxlen ))
-    if [ ${pwdoffset} -gt "0" ]
-    then
-        NEW_PWD=${NEW_PWD:$pwdoffset:$pwdmaxlen}
-        NEW_PWD=${trunc_symbol}/${NEW_PWD#*/}
-    fi
-}
- 
-bash_prompt() {
-    case $TERM in
-     xterm*|rxvt*)
-         local TITLEBAr='\[\033]0;\u:${NEW_PWD}\007\]'
-          ;;
-     *)
-         local TITLEBAr=""
-          ;;
-    esac
-    local NONE="\[\033[0m\]"    # unsets color to term's fg color
- 
-    # regular colors
-    local K="\[\033[0;30m\]"    # black
-    local R="\[\033[0;31m\]"    # red
-    local G="\[\033[0;32m\]"    # green
-    local Y="\[\033[0;33m\]"    # yellow
-    local B="\[\033[0;34m\]"    # blue
-    local M="\[\033[0;35m\]"    # magenta
-    local C="\[\033[0;36m\]"    # cyan
-    local W="\[\033[0;37m\]"    # white
- 
-    # emphasized (bolded) colors
-    local EMK="\[\033[1;30m\]"
-    local EMR="\[\033[1;31m\]"
-    local EMG="\[\033[1;32m\]"
-    local EMY="\[\033[1;33m\]"
-    local EMB="\[\033[1;34m\]"
-    local EMM="\[\033[1;35m\]"
-    local EMC="\[\033[1;36m\]"
-    local EMW="\[\033[1;37m\]"
- 
-    # background colors
-    local BGK="\[\033[40m\]"
-    local BGR="\[\033[41m\]"
-    local BGG="\[\033[42m\]"
-    local BGY="\[\033[43m\]"
-    local BGB="\[\033[44m\]"
-    local BGM="\[\033[45m\]"
-    local BGC="\[\033[46m\]"
-    local BGW="\[\033[47m\]"
- 
-    local UC=$W                 # user's color
-    [ $UID -eq "0" ] && UC=$R   # root's color
- 
-	#PS1="\e[48;5;129;38;5;87;5m\t \e[0m\e[25m @ \e[48;5;89;38;5;52m $(pwd) $TITLEBAr \e[0m\r\n"
-
-
-	PS1="#${fg_lgray}%n@${at_bold}%m${at_boldoff}${fg_dgray}[${fg_white}%~${fg_dgray}] #[${fg_white}%T${fg_dgray}]:${at_normal}"
-	# without colors: PS1="[\u@\h \${NEW_PWD}]\\$ "
-    # extra backslash in front of \$ to make bash colorize the prompt
-}
-# init it by setting PROMPT_COMMAND
-PROMPT_COMMAND=bash_prompt_command
-bash_prompt
-unset bash_prompt
-
-
-if [ -d ~/bin/shell ]; then
-		cd ~/bin/shell
-		for i in $(ls -1); do
-				source $i
-		done
-		cd ~
-		unset i
-fi
-
-
+alias sbrebuild='~/Desktop/bin/./sbrebuild.sh'
+cd /home/pnt/
