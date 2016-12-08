@@ -9,8 +9,14 @@
 #░░      ░░ ░░░ ░░  ░░░░░░░░ ░░░░░░   ░░░░░░ ░░░░░░  
 #
 
+#
+# Work 
+#
+
+alias sdrdc='cd ~/Desktop/sdrdc/sdrdc-build/petalinux'
 
 
+#------------------------------------------#
 
 alias ls='ls --color=auto' # color is useful.
 alias l='ls'  
