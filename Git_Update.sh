@@ -8,14 +8,6 @@
 #░░███████ ░██     ░░██████░░████████  ░░██ ░░██████   ░░████████ ░██  ░░██ 
 # ░░░░░░░  ░░       ░░░░░░  ░░░░░░░░    ░░   ░░░░░░     ░░░░░░░░  ░░    ░░ 
 
-cp  ~/.vimrc ./ 
-cp  ~/.Xdefaults ./ 
-cp  ~/.Xresources ./ 
-cp  ~/.zshrc ./ 
-cp ~/.bashrc ./
-cp ~/.tmux.conf ./
-cp -r ~/.i3  ./
-cp -r ~/bin ./
 
-git commit -am "Updated DotFiles via script"
+git commit -am ":peach: auto update :peach:"
 git push origin master
