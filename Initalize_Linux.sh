@@ -16,7 +16,8 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mv ~/.bashrc ~/.bashrc.BKP
 stow ./home_resources -t ~/
 stow ./fonts -t /user/share/figlet/fonts/
-cd /usr/lib/urxvt && sudo rm -r perl/ && sudo git clone https://github.com/rad-/perl.git
+cd /usr/lib/urxvt && sudo rm -r perl/ && sudo git clone https://github.com/tropical-peach/perl.git
 
 
 printf "Ensure fonts and other path dependant files are installed"
+echo "----------"
