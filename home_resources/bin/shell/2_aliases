@@ -91,3 +91,4 @@ alias moreswap="sudo sysctl vm.swappiness=100"
 #alias pacupgrade='sh ~/.mirrorfix'
 #alias giveswhat='sudo pkgfile --list'
 
+alias tagit='ctags -R --fields=+1 --c-kinds=+p+l'

@@ -1,6 +1,3 @@
-xterm*font: *-fixed-*-*-*-25-*
-
-
 !Xft.dpi: 300
 
 !Xcursor.size:12
@@ -21,7 +18,7 @@ urxvt*saveLines:50000
 
 ! Font
 !URxvt*letterSpace: 4
-URxvt*font:xft:Bitstream Vera Sans Mono:autohint=true:pixelsize=15,\
+URxvt*font:xft:Bitstream Vera Sans Mono:autohint=true:pixelsize=10,\
 	-misc-fixed-bold-r-normal--15-140-75-75-c-90-iso10646-1,\
 	-misc-fixed-iso10646-1,\
 	-misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1, \
@@ -95,60 +92,100 @@ URxvt.keysym.Control-Shift-N: perl:tabbedex:prev_tab
 
 *faceName: Source Code Pro for Powerline:size=11:antialias=true
 
-! --- special colors ---
-
-*background: #22222A
-*foreground: #C1BDB4
-
-! --- standard colors ---
+!special
+*.foreground:   #e4cbd2
+*.background:   #15070b
+*.cursorColor:  #e4cbd2
 
 ! black
-*color0: #434460
-
-! bright_black
-*color8: #434460
+*.color0:       #210d14
+*.color8:       #ce7191
 
 ! red
-*color1: #6E6A81
-
-! bright_red
-*color9: #6E6A81
+*.color1:       #ef1057
+*.color9:       #72994b
 
 ! green
-*color2: #8D6B86
-
-! bright_green
-*color10: #8D6B86
+*.color2:       #46232f
+*.color10:      #58b2e0
 
 ! yellow
-*color3: #8F6478
-
-! bright_yellow
-*color11: #8F6478
+*.color3:       #673747
+*.color11:      #6da397
 
 ! blue
-*color4: #B17380
-
-! bright_blue
-*color12: #B17380
+*.color4:       #925066
+*.color12:      #5090b3
 
 ! magenta
-*color5: #9D6C68
-
-! bright_magenta
-*color13: #9D6C68
+*.color5:       #c1708a
+*.color13:      #e86897
 
 ! cyan
-*color6: #B67363
-
-! bright_cyan
-*color14: #B67363
+*.color6:       #d4a6b4
+*.color14:      #a0773d
 
 ! white
-*color7: #B38061
+*.color7:       #eedfe3
+*.color15:      #7da852
 
-! bright_white
-*color15: #B38061
+
+
+
+!! --- special colors ---
+!
+!*background: #22222A
+!*foreground: #C1BDB4
+!
+!! --- standard colors ---
+!
+!! black
+!*color0: #434460
+!
+!! bright_black
+!*color8: #434460
+!
+!! red
+!*color1: #6E6A81
+!
+!! bright_red
+!*color9: #6E6A81
+!
+!! green
+!*color2: #8D6B86
+!
+!! bright_green
+!*color10: #8D6B86
+!
+!! yellow
+!*color3: #8F6478
+!
+!! bright_yellow
+!*color11: #8F6478
+!
+!! blue
+!*color4: #B17380
+!
+!! bright_blue
+!*color12: #B17380
+!
+!! magenta
+!*color5: #9D6C68
+!
+!! bright_magenta
+!*color13: #9D6C68
+!
+!! cyan
+!*color6: #B67363
+!
+!! bright_cyan
+!*color14: #B67363
+!
+!! white
+!*color7: #B38061
+!
+!! bright_white
+!*color15: #B38061
 
 
 ! ------------------------------------------------------------------------------
