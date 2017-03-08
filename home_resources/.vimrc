@@ -16,14 +16,14 @@ set hlsearch
 set guioptions-=T "remove toolbar
 set mouse=a
 set encoding=utf8
-set guifont=Fixedsys:h11:cANSI
+set guifont=Monospace:h11
 
 "
 "	VUNDLE STUFF
 "
 " set the runtime path to include Vundle and initialize
-set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
-call vundle#begin('$USERPROFILE/vimfiles/bundle/')
+set rtp+=$HOME/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 
 " let Vundle manage Vundle, required
@@ -34,7 +34,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
 "Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'ascenator/L9', {'name': 'newL9'}
 
 Plugin 'vim-latex/vim-latex'
 "Plugin 'Valloric/YouCompleteMe'
