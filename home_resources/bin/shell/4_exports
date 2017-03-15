@@ -27,7 +27,7 @@ me=$(whoami)
 export EDITOR=vim
 export PAGER=less
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/$me/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/$me/bin:/home/$me/gits"
 
 export LM_LICENSE_FILE="2100@sp-bbz2zp1-lt.ensco.win"
 

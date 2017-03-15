@@ -15,7 +15,8 @@ urxvt*scrollBar:false
 !urxvt*transpscrollbar:true
 urxvt*saveLines:50000
 
-
+! Font for Xterm
+xterm*font:*-fixed-*-*-*-10-*
 ! Font
 !URxvt*letterSpace: 4
 URxvt*font:xft:Bitstream Vera Sans Mono:autohint=true:pixelsize=10,\
@@ -46,8 +47,9 @@ URxvt*font:xft:Bitstream Vera Sans Mono:autohint=true:pixelsize=10,\
 	DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book",\
 	xft:Uming:pixelsize=28,\
 	xft:Code2000:antialias=false,\
-	xft:Inconsolata-dz for Powerline:pixelsize=22,\
-	xft:Symbola:pixelsize=20
+	xft:DejaVu Sans Mono for Powerline:pixelsize=12,\
+	xft:Symbola:pixelsize=20,\
+	xft:Terminess Powerline:size=12
 
 !Icon for file
 !URxvt*iconFile: /home/steven/Dropbox/Wallpapers/tumblr_mg0th7CodL1qmxcsxo1_500.gif
@@ -132,93 +134,6 @@ URxvt.keysym.Control-Shift-N: perl:tabbedex:prev_tab
 
 
 
-!! --- special colors ---
-!
-!*background: #22222A
-!*foreground: #C1BDB4
-!
-!! --- standard colors ---
-!
-!! black
-!*color0: #434460
-!
-!! bright_black
-!*color8: #434460
-!
-!! red
-!*color1: #6E6A81
-!
-!! bright_red
-!*color9: #6E6A81
-!
-!! green
-!*color2: #8D6B86
-!
-!! bright_green
-!*color10: #8D6B86
-!
-!! yellow
-!*color3: #8F6478
-!
-!! bright_yellow
-!*color11: #8F6478
-!
-!! blue
-!*color4: #B17380
-!
-!! bright_blue
-!*color12: #B17380
-!
-!! magenta
-!*color5: #9D6C68
-!
-!! bright_magenta
-!*color13: #9D6C68
-!
-!! cyan
-!*color6: #B67363
-!
-!! bright_cyan
-!*color14: #B67363
-!
-!! white
-!*color7: #B38061
-!
-!! bright_white
-!*color15: #B38061
-
-
-! ------------------------------------------------------------------------------
-! --- end of terminal colors section -------------------------------------------
-! ------------------------------------------------------------------------------
-
-
-
-
-!Colors
-!urxvt*colorIT: Cyan
-!urxvt*highlightColor: Green
-!!urxvt*highlightColor: Grey25
-!urxvt*highlightTextColor: White 
-!urxvt*borderColor: Orange
-!urxvt*background:Black
-!urxvt*foreground:Pink
-!urxvt*color0: #101010
-!urxvt*color1: #f13a21
-!urxvt*color2: #93f91d
-!urxvt*color3: #ffd00a
-!urxvt*color4: #004f9e
-!urxvt*color5: #ec0048
-!urxvt*color6: #2aa7e7
-!urxvt*color7: #f2f2f2
-!urxvt*color8: #1d202f
-!urxvt*color9: #ff361e
-!urxvt*color10: #ffc005
-!urxvt*color11: #93ff00
-!urxvt*color12: #0071ff
-!urxvt*color13: #ef0051
-!urxvt*color14: #4bb8fd
-!urxvt*color15: #a020f0
 
 !Cursor
 urxvt*cursorColor: #DCDCCC

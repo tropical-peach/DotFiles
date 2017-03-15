@@ -7,8 +7,8 @@
 
 set $mod Mod4	
 
-#font pango: Bitstream Ver Sans Mono 18 
-font pango: uming 11
+font pango: Bitstream Ver Sans Mono 10
+#font pango: uming 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -150,7 +150,7 @@ bar {
 
 	#status_command /home/steven/conkbar
 	#status_command i3blocks 
-	status_command i3status
+	#status_command i3status
 	position top
 
 
@@ -214,7 +214,6 @@ exec sleep 1
 exec /usr/bin/xfce4-power-manager
 exec nm-applet 
 exec /usr/bin/nitrogen --restore
-exec /usr/bin/xrandr --dpi 140
 exec /usr/bin/xcompmgr -c -n
 
 exec "dropbox start"

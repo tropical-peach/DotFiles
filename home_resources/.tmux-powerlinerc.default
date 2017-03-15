@@ -50,6 +50,18 @@
 	export TMUX_POWERLINE_SEG_HOSTNAME_FORMAT="short"
 # }
 
+# macos_notification_count.sh {
+	# App ids to query in notification center, separated by space
+	# To get the app id that is associated with a specific app run:
+	# sqlite3 -list "/com.apple.notificationcenter/db/db" 'select * from app_info'
+	# The first column contains the app ids
+	# "5" is the app id of Messages.app
+	# Only "banner" notifications are supported (see settings in the notification center)
+	export TMUX_POWERLINE_SEG_MACOS_NOTIFICATION_COUNT_APPIDS="5"
+	# Notification symbol
+	export TMUX_POWERLINE_SEG_MACOS_NOTIFICATION_COUNT_CHAR="💬"
+# }
+
 # mailcount.sh {
 	# Mailbox type to use. Can be any of {apple_mail, gmail, maildir, mbox, mailcheck}
 	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILBOX_TYPE=""
@@ -71,7 +83,7 @@
 	
 	## Maildir
 	# Path to the maildir to check.
-	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILDIR_INBOX="/root/.mail/inbox/new"
+	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILDIR_INBOX="/home/seppala/.mail/inbox/new"
 	
 	## mbox
 	# Path to the mbox to check.
@@ -79,7 +91,7 @@
 	
 	## mailcheck
 	# Optional path to mailcheckrc
-	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILCHECKRC="/root/.mailcheckrc"
+	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILCHECKRC="/home/seppala/.mailcheckrc"
 # }
 
 # now_playing.sh {
