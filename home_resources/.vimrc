@@ -16,7 +16,7 @@ set hlsearch
 set guioptions-=T "remove toolbar
 set mouse=a
 set encoding=utf8
-set guifont=Monospace:h11
+set guifont=Monospace\ Bold\ 11
 
 "
 "	VUNDLE STUFF
