@@ -16,10 +16,9 @@ urxvt*scrollBar:false
 urxvt*saveLines:50000
 
 ! Font for Xterm
-xterm*font:*-fixed-*-*-*-10-*
 ! Font
 !URxvt*letterSpace: 4
-URxvt*font:xft:Bitstream Vera Sans Mono:autohint=true:pixelsize=10,\
+*font:xft:Bitstream Vera Sans Mono:autohint=true:pixelsize=12,\
 	-misc-fixed-bold-r-normal--15-140-75-75-c-90-iso10646-1,\
 	-misc-fixed-iso10646-1,\
 	-misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1, \
@@ -49,6 +48,7 @@ URxvt*font:xft:Bitstream Vera Sans Mono:autohint=true:pixelsize=10,\
 	xft:Code2000:antialias=false,\
 	xft:DejaVu Sans Mono for Powerline:pixelsize=12,\
 	xft:Symbola:pixelsize=20,\
+	xft:Meslo LG S DZ for Powerline:pixelsize=12,\
 	xft:Terminess Powerline:size=12
 
 !Icon for file
@@ -92,7 +92,7 @@ URxvt.keysym.Control-Shift-N: perl:tabbedex:prev_tab
 ! --- http://ciembor.github.com/4bit -------------------------------------------
 ! ------------------------------------------------------------------------------
 
-*faceName: Source Code Pro for Powerline:size=11:antialias=true
+! *faceName: Source Code Pro for Powerline:size=11:antialias=true
 
 !special
 *.foreground:   #e4cbd2
