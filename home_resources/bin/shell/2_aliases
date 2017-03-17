@@ -41,6 +41,7 @@ alias lesslast="less !:*"
 alias mine="sudo chown root"
 alias -g L="| less"
 alias reboot='sudo reboot'
+alias grep="grep --color"
 
 ## changing dirs with just dots. 
 alias .='cd ../'

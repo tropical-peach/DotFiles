@@ -17,6 +17,7 @@ set guioptions-=T "remove toolbar
 set mouse=a
 set encoding=utf8
 set guifont=Monospace\ Bold\ 11
+set t_Co=256
 
 "
 "	VUNDLE STUFF
@@ -46,6 +47,7 @@ Plugin 'rdnetto/YCM-Generator', {'branch' : 'stable'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'vim-airline/vim-airline'
 
 
 "VIM website
@@ -63,7 +65,9 @@ filetype plugin indent on    " required
 "
 "	END VUNDLE
 "
-
+let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
+let g:airline_powerline_fonts=1
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -235,3 +239,10 @@ let g:Tex_ViewRule_pdf = 'c:/Program\ Files (x86)/Adob/Acrobat\ Reader\ DC/Reade
 filetype plugin on
 filetype plugin indent on
 highlight Normal ctermfg=grey ctermbg=black
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2
+
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
