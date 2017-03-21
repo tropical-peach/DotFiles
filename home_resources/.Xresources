@@ -18,7 +18,7 @@ urxvt*saveLines:50000
 ! Font for Xterm
 ! Font
 !URxvt*letterSpace: 4
-*font:xft:Bitstream Vera Sans Mono:autohint=true:pixelsize=12,\
+URxvt.font:xft:Bitstream Vera Sans Mono:autohint=true:pixelsize=12,\
 	-misc-fixed-bold-r-normal--15-140-75-75-c-90-iso10646-1,\
 	-misc-fixed-iso10646-1,\
 	-misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1, \

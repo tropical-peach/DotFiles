@@ -2,25 +2,27 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-if [ -f /mnt/c/windows-version.txt ]; then 
+if [ -f /mnt/c/Program\ \Files/desktop.ini ]; then
 		echo "///WARNING\\\\\\"
 		echo "WINDOWS DETECTED"
 		echo "INITALIZING WINDOWS MODE"
 
 		
-		echo "run 'export DISPLAY:=0'"
+		export DISPLAY=:0
+		xrdb ~/.Xresources
 		urxvtd -q -o -f
 		echo "urxvt running in daemon mode"
 		echo "Start XMING and use urxtvc"
-else
-		if [ -d ~/bin/shell ]; then
-				cd ~/bin/shell
-				for i in $(ls -1); do
-								source $i
-				done
-				unset i
-		fi
 fi
+
+if [ -d ~/bin/shell ]; then
+		cd ~/bin/shell
+		for i in $(ls -1); do
+						source $i
+		done
+		unset i
+fi
+
 
 
 
