@@ -47,7 +47,8 @@ Plugin 'rdnetto/YCM-Generator', {'branch' : 'stable'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline'
+Plugin 'itchyny/lightline.vim'
 
 
 "VIM website
@@ -244,5 +245,70 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 " Always show statusline
 set laststatus=2
 
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set t_Co=256
+let g:lightline = {
+  \ 'active': {
+  \   'left': [ [ 'filename' ],
+  \             [ 'readonly', 'fugitive' ] ],
+  \   'right': [ [ 'percent', 'lineinfo' ],
+  \              [ 'fileencoding', 'filetype' ],
+  \              [ 'fileformat', 'syntastic' ] ]
+  \ },
+  \ 'component_function': {
+  \   'modified': 'WizMod',
+  \   'readonly': 'WizRO',
+  \   'fugitive': 'WizGit',
+  \   'filename': 'WizName',
+  \   'filetype': 'WizType',
+  \   'fileformat' : 'WizFormat',
+  \   'fileencoding': 'WizEncoding',
+  \   'mode': 'WizMode',
+  \ },
+  \ 'component_expand': {
+  \   'syntastic': 'SyntasticStatuslineFlag',
+  \ },
+  \ 'component_type': {
+  \   'syntastic': 'error',
+  \ },
+  \ 'separator': { 'left': '▒', 'right': '▒' },
+  \ 'subseparator': { 'left': '▒', 'right': '' }
+  \ }
+function! WizMod()
+  return &ft =~ 'help\|vimfiler' ? '' : &modified ? '»' : &modifiable ? '' : ''
+endfunction
+
+function! WizRO()
+  return &ft !~? 'help\|vimfiler' && &readonly ? 'x' : ''
+endfunction
+
+function! WizGit()
+  if &ft !~? 'help\|vimfiler' && exists("*fugitive#head")
+    return fugitive#head()
+  endif
+  return ''
+endfunction
+
+function! WizName()
+  return ('' != WizMod() ? WizMod() . ' ' : '') .
+        \ ('' != expand('%:t') ? expand('%:t') : '[none]') 
+endfunction
+
+function! WizType()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : '') : ''
+endfunction
+
+function! WizFormat()
+  return ''
+endfunction
+
+function! WizEncoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &enc : &enc) : ''
+endfunction
+
+augroup AutoSyntastic
+  autocmd!
+  autocmd BufWritePost *.c,*.cpp,*.go,*.js,*.php,*.css,*.scss,*.sh,*.rb call s:syntastic()
+augroup END
+function! s:syntastic()
+  SyntasticCheck
+  call lightline#update()
+endfunction
