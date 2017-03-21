@@ -70,7 +70,6 @@ let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_powerline_fonts=1
 
-set diffexpr=MyDiff()
 function MyDiff()
   let opt = '-a --binary '
   if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
@@ -94,6 +93,7 @@ function MyDiff()
   endif
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
+set diffexpr=MyDiff()
 
 "
 "       Vim tags
@@ -246,12 +246,13 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 
 let g:lightline = {
-  \ 'active': {
+  \ 	'colorscheme': 'desert',
+	\		'active': {
   \   'left': [ [ 'filename' ],
   \             [ 'readonly', 'fugitive' ] ],
   \   'right': [ [ 'percent', 'lineinfo' ],
   \              [ 'fileencoding', 'filetype' ],
-  \              [ 'fileformat', 'syntastic' ] ]
+  \              [ 'fileformat' ] ]
   \ },
   \ 'component_function': {
   \   'modified': 'WizMod',
@@ -263,15 +264,11 @@ let g:lightline = {
   \   'fileencoding': 'WizEncoding',
   \   'mode': 'WizMode',
   \ },
-  \ 'component_expand': {
-  \   'syntastic': 'SyntasticStatuslineFlag',
-  \ },
-  \ 'component_type': {
-  \   'syntastic': 'error',
-  \ },
-  \ 'separator': { 'left': '▒', 'right': '▒' },
-  \ 'subseparator': { 'left': '▒', 'right': '' }
+  \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
+  \ 'subseparator': { 'left': '▒', 'right': '░' }  
   \ }
+
+
 function! WizMod()
   return &ft =~ 'help\|vimfiler' ? '' : &modified ? '»' : &modifiable ? '' : ''
 endfunction
@@ -304,11 +301,11 @@ function! WizEncoding()
   return winwidth(0) > 70 ? (strlen(&fenc) ? &enc : &enc) : ''
 endfunction
 
-augroup AutoSyntastic
-  autocmd!
-  autocmd BufWritePost *.c,*.cpp,*.go,*.js,*.php,*.css,*.scss,*.sh,*.rb call s:syntastic()
-augroup END
-function! s:syntastic()
-  SyntasticCheck
-  call lightline#update()
-endfunction
+
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
