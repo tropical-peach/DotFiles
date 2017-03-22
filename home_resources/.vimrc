@@ -246,7 +246,7 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 
 let g:lightline = {
-  \ 	'colorscheme': 'desert',
+  \ 	'colorscheme': 'molokai',
 	\		'active': {
   \   'left': [ [ 'filename' ],
   \             [ 'readonly', 'fugitive' ] ],
