@@ -35,7 +35,7 @@ Plugin 'L9'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 Plugin 'vim-latex/vim-latex'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tlib_vim'
 Plugin 'vimoutliner/vimoutliner'
 Plugin 'sudar/vim-arduino-syntax'
