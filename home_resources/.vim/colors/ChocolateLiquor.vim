@@ -16,6 +16,10 @@ if exists("syntax_on")
 endif
 let g:colors_name = "ChocolateLiquor"
 
+
+highlight ALEErrorSign  ctermbg=DarkRed ctermfg=black
+highlight ALEWarningSign 		ctermbg=DarkCyan ctermfg=black
+
 syn keyword TODO FIXME TODO
 hi TODO guifg=#ef1057 guibg=#72994b term=bold
 syn match myKEYS contained  "\<\(NOTE\|BUG\|TODO\|FIXME\):"

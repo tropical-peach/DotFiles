@@ -27,32 +27,24 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'L9'
 
 
 Plugin 'tpope/vim-fugitive'
-Plugin 'L9'
-"Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-Plugin 'vim-latex/vim-latex'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tlib_vim'
 Plugin 'vimoutliner/vimoutliner'
 Plugin 'sudar/vim-arduino-syntax'
-"Plugin 'quark-zju/vim-cpp-auto-include'
 Plugin 'godlygeek/tabular'
 Plugin 'rdnetto/YCM-Generator', {'branch' : 'stable'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
-"Plugin 'vim-airline/vim-airline'
 Plugin 'itchyny/lightline.vim'
-
+Plugin 'w0rp/ale'
 
 "VIM website
-
-Plugin 'AutoCpp'
-Plugin 'Atom'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,8 +57,8 @@ filetype plugin indent on    " required
 "	END VUNDLE
 "
 let g:airline#extensions#tabline#enabled = 1
-set laststatus=2
 let g:airline_powerline_fonts=1
+set laststatus=2
 
 function MyDiff()
   let opt = '-a --binary '
@@ -108,6 +100,7 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 " tpope gist to automatically maintain tabs while typing
 "
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
 
 
 " Use by selecting all text which you desire to align.
@@ -157,11 +150,7 @@ com! StartClang call StartClangComplete()
 
 " SuperTab completion fall-back
 let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
-"let g:tex_flavor='latex'
-"let g:Tex_DefaultTargetFormat='pdf'
 set nocp
-
-let g:acp_behaviorSnipmateLength = 1
 
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :NERDTreeToggle<CR>
@@ -202,39 +191,18 @@ let g:DoxygenToolkit_blockHeader="***********"
 let g:DoxygenToolkit_blockFooter="***********"
 let g:DoxygenToolkit_authorName="Steven Seppala"
 let g:DoxygenToolkit_licenseTag=" ENSCO, inc Internal Software. Do not distribute"
-  let g:DoxygenToolkit_briefTag_className =        " yes "
-  let g:DoxygenToolkit_briefTag_structName =       " yes "
-  let g:DoxygenToolkit_briefTag_enumName =         " yes "
-  let g:DoxygenToolkit_briefTag_namespaceName =    " yes "
-  let g:DoxygenToolkit_briefTag_funcName =         " yes "
-  let g:DoxygenToolkit_keepEmptyLineAfterComment = " yes "
+let g:DoxygenToolkit_briefTag_className =        " yes "
+let g:DoxygenToolkit_briefTag_structName =       " yes "
+let g:DoxygenToolkit_briefTag_enumName =         " yes "
+let g:DoxygenToolkit_briefTag_namespaceName =    " yes "
+let g:DoxygenToolkit_briefTag_funcName =         " yes "
+let g:DoxygenToolkit_keepEmptyLineAfterComment = " yes "
 "
 "
 "
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
-
-" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
-" can be called correctly.
-set shellslash
-
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
-" program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
 
 " OPTIONAL: This enables automatic indentation as you type.
 filetype indent on
-
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
-
-
-let g:Tex_ViewRule_pdf = 'c:/Program\ Files (x86)/Adob/Acrobat\ Reader\ DC/Reader/AcroRd32'
-
-
 filetype plugin on
 filetype plugin indent on
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
@@ -246,7 +214,8 @@ let g:lightline = {
   \ 	'colorscheme': 'molokai',
 	\		'active': {
   \   'left': [ [ 'filename' ],
-  \             [ 'readonly', 'fugitive' ] ],
+  \             [ 'readonly', 'fugitive' ],
+	\							[ 'lint' ] ],
   \   'right': [ [ 'percent', 'lineinfo' ],
   \              [ 'fileencoding', 'filetype' ],
   \              [ 'fileformat' ] ]
@@ -260,6 +229,7 @@ let g:lightline = {
   \   'fileformat' : 'WizFormat',
   \   'fileencoding': 'WizEncoding',
   \   'mode': 'WizMode',
+	\   'lint' : 'Dryer',
   \ },
   \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
   \ 'subseparator': { 'left': '▒', 'right': '░' }  
@@ -298,6 +268,10 @@ function! WizEncoding()
   return winwidth(0) > 70 ? (strlen(&fenc) ? &enc : &enc) : ''
 endfunction
 
+function! Dryer()
+		return ALEGetStatusLine()
+endfunction
+
 
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
@@ -306,3 +280,27 @@ if &term =~ '^screen'
     execute "set <xRight>=\e[1;*C"
     execute "set <xLeft>=\e[1;*D"
 endif
+
+
+
+""//
+""//     ██     ██       ████████
+""//    ████   ░██      ░██░░░░░ 
+""//   ██░░██  ░██      ░██      
+""//  ██  ░░██ ░██      ░███████ 
+""// ██████████░██      ░██░░░░  
+""//░██░░░░░░██░██      ░██      
+""//░██     ░██░████████░████████
+""//░░      ░░ ░░░░░░░░ ░░░░░░░░ 
+""//
+let g:airline#extensions#ale#enabled =  1
+let g:ale_statusline_format = ['☠ %d', '⚠ %d', '✓☆  ok']
+
+let g:ale_lint_on_text_changed = 'never'
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = "☢"
+let g:ale_sign_warning = "⚠"
+
