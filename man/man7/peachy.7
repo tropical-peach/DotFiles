@@ -1,0 +1,30 @@
+.TH man 7 "7 July 2017" "1.0" "Peachy Subsystem"
+\" TODO : expand this file and add git precomand to update thedate.
+.Dd 8/4/10               \" DATE
+.Dt Peachy       \" Program name and manual section number
+.Os 
+.Sh Name                 \" Section Header - required - don't modify
+.Nm Peachify
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line.
+.\" Use .Nm macro to designate other names for the documented program.
+.Nd Installs the peachy subsystem and patches it for use with the peachy macros and environment
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+Copies and setsup backups for your system of all files that the subsystem installs. When un-installing the subsystem these .bkp files are reloaded from where they were in the ~/ directory before. I.E, don't delete the *.bkp files this script makes.
+.Sh Files                \" File used or created by the topic of the man page
+.Bl -tag -width ".zshrc" -indent
+.It .zshrc
+Setup ZSH options and specific files
+.It shell/
+Variables, functions, and exports for all shells.
+.It man/
+All custom man pages for scripts and programs contained in this repo
+.It vim*
+All vim configuration files, bundles, and color schemes.
+.El                      \" Ends the list
+.Sh BUGS              \" Document known, unremedied bugs
+This may sometimes take a second to load as it is sourceing a few files in specific dependant order so that other shells may use the same variables. This could be sped up with better processing and scripting.
+.Sh HISTORY           \" Document history if command behaves in a unique manner
+.It Pa 1.0
+Inital release from PRIVATE
+.El
