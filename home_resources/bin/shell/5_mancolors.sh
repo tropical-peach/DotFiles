@@ -11,7 +11,7 @@
 #       and chmod +x it(it also gets run as a script)
 #       If you name it something else or put it somewhere else,
 #       change this:
-export MANCOLORPATH=$HOME/bin/shell/mancolors.sh
+export MANCOLORPATH=$HOME/bin/shell/5_mancolors.sh
 #If you want it to use just the man section as the seed change this
 # to 1. Man pages of the same section will have the same schemes.
 export USESECTION=0
