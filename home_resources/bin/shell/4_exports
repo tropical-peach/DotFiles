@@ -26,6 +26,7 @@
 me=$(whoami)
 export EDITOR=vim
 export PAGER=less
+export LESS="--RAW-CONTROL-CHARS"
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/$me/bin:/home/$me/gits"
 
