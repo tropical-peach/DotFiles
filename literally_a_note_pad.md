@@ -17,3 +17,4 @@
 Fundamentals of Astrodynamics and Applications, 4th ed. (Space Technology Library) by David A. Vallado 
 
 marty freedman
+http://tucson.com/solar-eclipse-in-tucson/article_e920af0e-1080-5797-a880-32b5b846a556.html
