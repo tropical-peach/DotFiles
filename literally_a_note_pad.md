@@ -18,3 +18,8 @@ Fundamentals of Astrodynamics and Applications, 4th ed. (Space Technology Librar
 
 marty freedman
 http://tucson.com/solar-eclipse-in-tucson/article_e920af0e-1080-5797-a880-32b5b846a556.html
+
+
+https://retropiehandhelds.com/product/dot-matrix-glass-screen-border-gray#tab-description
+
+http://galaxygaming.co.uk/product-category/gameboy-zero/page/2/
