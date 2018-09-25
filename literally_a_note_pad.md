@@ -23,3 +23,5 @@ http://tucson.com/solar-eclipse-in-tucson/article_e920af0e-1080-5797-a880-32b5b8
 https://retropiehandhelds.com/product/dot-matrix-glass-screen-border-gray#tab-description
 
 http://galaxygaming.co.uk/product-category/gameboy-zero/page/2/
+
+https://www.instructables.com/id/Leather-binding-a-Paperback-A-New-and-Improved-Gui/
