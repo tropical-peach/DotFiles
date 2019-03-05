@@ -1,4 +1,3 @@
-colorscheme ChocolateLiquor 
 set background=dark
 let asmsyntax='armasm'
 let filetype_inc='armasm'
