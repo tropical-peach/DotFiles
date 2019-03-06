@@ -2,7 +2,10 @@ set background=dark
 let asmsyntax='armasm'
 let filetype_inc='armasm'
 set tabstop=2
-set shiftwidth=4
+set shiftwidth=2
+set expandtab
+set softtabstop=0
+set autoindent
 set number
 set ai
 syntax on
@@ -16,6 +19,10 @@ set mouse=a
 set encoding=utf8
 set guifont=Monospace\ Bold\ 11
 set t_Co=256
+
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
 "
 "	VUNDLE STUFF
 "
