@@ -13,8 +13,7 @@
 # Work 
 #
 
-alias sdrdc='cd ~/Desktop/sdrdc/sdrdc-build/petalinux'
-
+alias 20183='source  /home/sseppal/tools/Xilinx/Vivado/2018.3/settings64.sh'
 
 #------------------------------------------#
 
@@ -42,6 +41,7 @@ alias mine="sudo chown root"
 alias -g L="| less"
 alias reboot='sudo reboot'
 alias grep="grep --color"
+alias nuke="'rm' -rfv"
 
 ## changing dirs with just dots. 
 alias .='cd ../'

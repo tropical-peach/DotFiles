@@ -27,12 +27,14 @@ me=$(whoami)
 export EDITOR=vim
 export PAGER=less
 export LESS="--RAW-CONTROL-CHARS"
+export VIMRUNTIME=~/gits/vim/runtime
+export PATH="/opt/synopsis/installer:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/$me/bin:/home/$me/gits:/home/$me/gits/vim/src/:/home/$me/bin/sublime/"
+export XILINX_VIVADO="/home/sseppal/tools/Xilinx/Vivado/2018.3/"
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/$me/bin:/home/$me/gits"
 
-export LM_LICENSE_FILE="2100@sp-bbz2zp1-lt.ensco.win"
-
-export XILINXD_LICENSE_FILE="2100@sp-bbz2zp1-lt.ensco.win"
+export LM_LICENSE_FILE="2100@esslic"
+export SNPSLMD_LICENSE_FILE="1709@esslic"
+export XILINXD_LICENSE_FILE="2100@esslic"
 export HISTFILE=~/.shell_history
 export HISTSIZE=1000
 export SAVEHIST=$HISTSIZE

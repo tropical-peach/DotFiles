@@ -1,3 +1,4 @@
+colorscheme ChocolateLiquor
 set background=dark
 let asmsyntax='armasm'
 let filetype_inc='armasm'
@@ -35,16 +36,15 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'L9'
 
-
+Plugin 'neomake/neomake'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tlib_vim'
 Plugin 'vimoutliner/vimoutliner'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'godlygeek/tabular'
-Plugin 'rdnetto/YCM-Generator', {'branch' : 'stable'}
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'itchyny/lightline.vim'
@@ -235,7 +235,7 @@ let g:lightline = {
   \   'fileformat' : 'WizFormat',
   \   'fileencoding': 'WizEncoding',
   \   'mode': 'WizMode',
-	\   'lint' : 'Dryer',
+	\   'lint': 'Dryer',
   \ },
   \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
   \ 'subseparator': { 'left': '▒', 'right': '░' }  
@@ -275,8 +275,22 @@ function! WizEncoding()
 endfunction
 
 function! Dryer()
-		return ALEGetStatusLine()
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:Merrors = l:counts.error
+    let l:Mwarnings = l:counts.warning
+    let l:Minfos = l:counts.info
+    let l:MstylesCheck = l:counts.style_error + l:counts.style_warning
+
+    return l:counts.total == 0 ? ' ✓☆  ok' : printf(
+    \   '☠ %d ⚠ %d I%d Style%d',
+    \   Merrors,
+    \   Mwarnings,
+    \   Minfos,
+    \   MstylesCheck
+    \)
 endfunction
+
 
 
 if &term =~ '^screen'
@@ -300,8 +314,6 @@ endif
 ""//░░      ░░ ░░░░░░░░ ░░░░░░░░ 
 ""//
 let g:airline#extensions#ale#enabled =  1
-let g:ale_statusline_format = ['☠ %d', '⚠ %d', '✓☆  ok']
-
 let g:ale_lint_on_text_changed = 'never'
 " You can disable this option too
 " if you don't want linters to run on opening a file
@@ -309,4 +321,23 @@ let g:ale_lint_on_enter = 0
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = "☢"
 let g:ale_sign_warning = "⚠"
+
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_vhdl_checkers = ['vhdltool']
+
+
+let g:neomake_open_list = 2
+autocmd! BufWritePost,BufRead * Neomake
+let g:neomake_vhdl_vhdltool_maker = {
+	\ 'exe': 'vhdl-tool',
+	\ 'args': ['client', 'lint', '--compact'],
+	\ 'errorformat': '%f:%l:%c:%t:%m',
+	\ }
+let g:neomake_vhdl_enabled_makers = ['vhdltool']
+
+
 
