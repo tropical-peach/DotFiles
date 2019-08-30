@@ -2,9 +2,8 @@ colorscheme ChocolateLiquor
 set background=dark
 let asmsyntax='armasm'
 let filetype_inc='armasm'
-set tabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=2 shiftwidth=2 expandtab
+    
 set softtabstop=0
 set autoindent
 set number
@@ -25,7 +24,7 @@ set t_Co=256
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 "
-"	VUNDLE STUFF
+" VUNDLE STUFF
 "
 " set the runtime path to include Vundle and initialize
 set rtp+=$HOME/.vim/bundle/Vundle.vim/
@@ -60,7 +59,7 @@ filetype plugin indent on    " required
 
 
 "
-"	END VUNDLE
+" END VUNDLE
 "
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
@@ -78,7 +77,7 @@ function MyDiff()
   if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
   let eq = ''
   if $VIMRUNTIME =~ ' '
-    	if &sh =~ '\<cmd'
+      if &sh =~ '\<cmd'
       let cmd = '""' . $VIMRUNTIME . '\diff"'
       let eq = '"'
     else
@@ -217,11 +216,11 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 
 let g:lightline = {
-  \ 	'colorscheme': 'molokai',
-	\		'active': {
+  \   'colorscheme': 'molokai',
+  \   'active': {
   \   'left': [ [ 'filename' ],
   \             [ 'readonly', 'fugitive' ],
-	\							[ 'lint' ] ],
+  \             [ 'lint' ] ],
   \   'right': [ [ 'percent', 'lineinfo' ],
   \              [ 'fileencoding', 'filetype' ],
   \              [ 'fileformat' ] ]
@@ -235,7 +234,7 @@ let g:lightline = {
   \   'fileformat' : 'WizFormat',
   \   'fileencoding': 'WizEncoding',
   \   'mode': 'WizMode',
-	\   'lint': 'Dryer',
+  \   'lint': 'Dryer',
   \ },
   \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
   \ 'subseparator': { 'left': '▒', 'right': '░' }  
@@ -333,10 +332,10 @@ let g:syntastic_vhdl_checkers = ['vhdltool']
 let g:neomake_open_list = 2
 autocmd! BufWritePost,BufRead * Neomake
 let g:neomake_vhdl_vhdltool_maker = {
-	\ 'exe': 'vhdl-tool',
-	\ 'args': ['client', 'lint', '--compact'],
-	\ 'errorformat': '%f:%l:%c:%t:%m',
-	\ }
+  \ 'exe': 'vhdl-tool',
+  \ 'args': ['client', 'lint', '--compact'],
+  \ 'errorformat': '%f:%l:%c:%t:%m',
+  \ }
 let g:neomake_vhdl_enabled_makers = ['vhdltool']
 
 
