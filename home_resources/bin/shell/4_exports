@@ -29,7 +29,6 @@ export PAGER=less
 export LESS="--RAW-CONTROL-CHARS"
 export VIMRUNTIME=~/gits/vim/runtime
 export PATH="/opt/synopsis/installer:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/$me/bin:/home/$me/gits:/home/$me/gits/vim/src/"
-export PATH="/home/$me/tools/synopsys/fpga/P-2019.03-SP1/bin/:/home/$me/tools/synopsys/fpga/P-2019.03-SP1/linux_a_64:/home/$me/tools/synopsys/fpga/P-2019.03-SP1/lib":$PATH
 export XILINX_VIVADO="/home/sseppal/tools/Xilinx/Vivado/2018.3/"
 export MGLS_LICENSE_FILE="1717@esslic"
 export LM_LICENSE_FILE="2100@esslic"
