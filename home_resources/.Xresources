@@ -8,9 +8,9 @@ urxvt*shell:/usr/bin/zsh
 urxvt*loginShell:true
 !urxvt*inheritPixmap: true
 urxvt*tintColor: #5e2750
-!urxvt*transparent:true
+urxvt*transparent:false
 urxvt*shading: 100
-urxvt*fading: 30
+!urxvt*fading: 90
 urxvt*scrollBar:false
 !urxvt*transpscrollbar:true
 urxvt*saveLines:50000

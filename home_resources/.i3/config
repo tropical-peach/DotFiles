@@ -51,11 +51,24 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+
+#set workspace
+set $b_ws 1 
+set $t_ws 2 
+set $v_ws 3 
+set $e_ws 4 
+
+#set monitor
+set $monitor_one   DP-6
+set $monitor_two   DP-0
+set $monitor_three DP-2
+set $monitor_four  DP-4
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
+bindsym $mod+1 workspace $b_ws
+bindsym $mod+2 workspace $t_ws
+bindsym $mod+3 workspace $v_ws
+bindsym $mod+4 workspace $e_ws
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -63,11 +76,17 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+#set workspace to monitor
+workspace $b_ws output $monitor_one
+workspace $t_ws output $monitor_two  
+workspace $v_ws output $monitor_three
+workspace $e_ws output $monitor_four 
+
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+1 move container to workspace $b_ws
+bindsym $mod+Shift+2 move container to workspace $t_ws
+bindsym $mod+Shift+3 move container to workspace $v_ws
+bindsym $mod+Shift+4 move container to workspace $e_ws
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -84,6 +103,11 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # log  i3 (logs you out of your X session)
 bindsym $mod+Shift+l exec /home/sseppal/bin/./lockme.sh 
 
+
+#keep programs on cetain workspaces
+#
+assign [class="Thunderbird"] $e_ws
+assign [class="pidgin"] $e_ws
 
 
 #
@@ -207,21 +231,16 @@ bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 
 #	Program start button 
 #	things.	
-bindsym $mod+b exec vivaldi
-#"google-chrome --force-device-scale-factor=2"
+bindsym $mod+b exec firefox
+bindsym $mod+m exec thunderbird
+bindsym $mod+p exec pidgin
+bindsym $mod+c exec compton
+
 #bindsym $mod+F2 exec "xrandr -s 1920x1080"
 #bindsym $mod+F1 exec "xrandr -s 3200x1800"
 #Change Power Settings
 #bindsym XF86Launch1 exec "sudo ./Operation_Mode"
 
-exec gnome-settings-daemon 
-exec ckb-daemon &
-exec ckb &
 exec sleep 1
-exec /usr/bin/xfce4-power-manager
-exec nm-applet 
 exec /usr/bin/nitrogen --restore
-exec /usr/bin/xcompmgr -c -n
-
-
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
