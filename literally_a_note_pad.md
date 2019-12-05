@@ -25,3 +25,5 @@ https://retropiehandhelds.com/product/dot-matrix-glass-screen-border-gray#tab-de
 http://galaxygaming.co.uk/product-category/gameboy-zero/page/2/
 
 https://www.instructables.com/id/Leather-binding-a-Paperback-A-New-and-Improved-Gui/
+
+https://xilinx-ax-dl.entitlenow.com/dl/ul/2018/12/08/R210093574/Xilinx_Vivado_SDK_Web_2018.3_1207_2324_Lin64.bin/0a31220c6201290f100bb2bcff5d1a46/5DE9AF1C?akdm=0&filename=Xilinx_Vivado_SDK_Web_2018.3_1207_2324_Lin64.bin
