@@ -17,7 +17,7 @@ set hlsearch
 set guioptions-=T "remove toolbar
 set mouse=a
 set encoding=utf8
-set guifont=Monospace\ Bold\ 11
+set guifont=DejaVu\ Sans\ Mono\ 10
 set t_Co=256
 
 "Remove all trailing whitespace by pressing F5
@@ -48,6 +48,7 @@ Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'w0rp/ale'
+Plugin 'majutsushi/tagbar'
 
 "VIM website
 
@@ -312,7 +313,7 @@ endif
 ""//░██     ░██░████████░████████
 ""//░░      ░░ ░░░░░░░░ ░░░░░░░░ 
 ""//
-let g:airline#extensions#ale#enabled =  1
+""let g:airline#extensions#ale#enabled =  1
 let g:ale_lint_on_text_changed = 'never'
 " You can disable this option too
 " if you don't want linters to run on opening a file
@@ -322,21 +323,70 @@ let g:ale_sign_error = "☢"
 let g:ale_sign_warning = "⚠"
 
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+""let g:syntastic_always_populate_loc_list = 1
+""let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_vhdl_checkers = ['vhdltool']
+""let g:syntastic_vhdl_checkers = ['vhdltool']
 
 
-let g:neomake_open_list = 2
-autocmd! BufWritePost,BufRead * Neomake
-let g:neomake_vhdl_vhdltool_maker = {
-  \ 'exe': 'vhdl-tool',
-  \ 'args': ['client', 'lint', '--compact'],
-  \ 'errorformat': '%f:%l:%c:%t:%m',
-  \ }
-let g:neomake_vhdl_enabled_makers = ['vhdltool']
+""let g:neomake_open_list = 2
+""autocmd! BufWritePost,BufRead * Neomake
+""let g:neomake_vhdl_vhdltool_maker = {
+""  \ 'exe': 'vhdl-tool',
+""  \ 'args': ['client', 'lint', '--compact'],
+""  \ 'errorformat': '%f:%l:%c:%t:%m',
+""  \ }
+""let g:neomake_vhdl_enabled_makers = ['vhdltool']
 
 
 
+""// ██      ██ ██      ██ ███████       ██    
+""//░██     ░██░██     ░██░██░░░░██     ████   
+""//░██     ░██░██     ░██░██    ░██   ██░░██  
+""//░░██    ██ ░██████████░██    ░██  ██  ░░██ 
+""// ░░██  ██  ░██░░░░░░██░██    ░██ ██████████
+""//  ░░████   ░██     ░██░██    ██ ░██░░░░░░██
+""//   ░░██    ░██     ░██░███████  ░██     ░██
+""//    ░░     ░░      ░░ ░░░░░░░   ░░      ░░ 
+nnoremap <leader>i :VerilogFollowInstance<CR>
+nnoremap <leader>I :VerilogFollowPort<CR>
+nnoremap <leader>u :VerilogGotoInstanceStart<CR>
+
+let g:SuperTabDefaultCompletionType = 'context'
+let g:tagbar_type_verilog_systemverilog = {
+        \ 'ctagstype'   : 'SystemVerilog',
+        \ 'kinds'       : [
+            \ 'b:blocks:1:1',
+            \ 'c:constants:1:0',
+            \ 'e:events:1:0',
+            \ 'f:functions:1:1',
+            \ 'm:modules:0:1',
+            \ 'n:nets:1:0',
+            \ 'p:ports:1:0',
+            \ 'r:registers:1:0',
+            \ 't:tasks:1:1',
+            \ 'A:assertions:1:1',
+            \ 'C:classes:0:1',
+            \ 'V:covergroups:0:1',
+            \ 'I:interfaces:0:1',
+            \ 'M:modport:0:1',
+            \ 'K:packages:0:1',
+            \ 'P:programs:0:1',
+            \ 'R:properties:0:1',
+            \ 'T:typedefs:0:1'
+        \ ],
+        \ 'sro'         : '.',
+        \ 'kind2scope'  : {
+            \ 'm' : 'module',
+            \ 'b' : 'block',
+            \ 't' : 'task',
+            \ 'f' : 'function',
+            \ 'C' : 'class',
+            \ 'V' : 'covergroup',
+            \ 'I' : 'interface',
+            \ 'K' : 'package',
+            \ 'P' : 'program',
+            \ 'R' : 'property'
+        \ },
+    \ }

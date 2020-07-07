@@ -155,3 +155,5 @@ fi
 #source /opt/pkg/petalinux-v2015.4-final/settings.sh
 
 
+
+export PATH="$PATH:/home/sseppal/pluto/tools/Riviera-PRO/bin"

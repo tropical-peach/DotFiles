@@ -13,7 +13,9 @@
 # Work 
 #
 
-alias 20183='source  /home/sseppal/tools/Xilinx/Vivado/2018.3/settings64.sh'
+alias 20183='source  /home/sseppal/pluto/tools/Vivado/2018.3/settings64.sh'
+alias 20191='source  /home/sseppal/pluto/tools/Vivado/2019.1/settings64.sh'
+alias viv='vivado -jvm -patch-module=java.desktop=/home/sseppal/pluto/tools/AR72614.jar'
 
 #------------------------------------------#
 
@@ -23,7 +25,7 @@ alias ll='ls -alFh'
 alias la='ls -lAFh'   
 alias lr='ls -tRFh'   
 alias lt='ls -ltFh'   
-alias rm='mv -t ~/Trash/'
+alias rm='mv -t ~/pluto/Trash/'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p -v'
@@ -32,7 +34,7 @@ alias du='du -h -c'
 alias reload='source ~/.zshrc'
 alias biggest='BLOCKSIZE=1048576; du -x | sort -nr | head -10'
 alias remdir='"rm" -rf'
-alias trashman='"rm" -rf ~/Trash/*'
+alias trashman='"rm" -rf ~/pluto/Trash/*'
 alias zshrc="$EDITOR ~/.zshrc"
 alias mountiso="sudo mount -t iso9660 -o loop"
 alias blank="sleep 1 && xset dpms force off"

@@ -102,4 +102,9 @@ setopt autocd extendedglob notify
 setopt no_beep
 
 
+###
+# Work alies
+###
 
+alias pluto="cd ~/pluto"
+alias gitwa="cd ~/pluto/git_wa"
