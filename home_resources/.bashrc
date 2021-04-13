@@ -3,25 +3,24 @@
 # for examples
 
 if [ -f /mnt/c/Program\ \Files/desktop.ini ]; then
-		echo "///WARNING\\\\\\"
-		echo "WINDOWS DETECTED"
-		echo "INITALIZING WINDOWS MODE"
+    echo "///WARNING\\\\\\"
+    echo "WINDOWS DETECTED"
+    echo "INITALIZING WINDOWS MODE"
 
-		
-		export DISPLAY=:0
-		xrdb ~/.Xresources
-		urxvtd -q -o -f
-		echo "urxvt running in daemon mode"
-		echo "Start XMING and use urxtvc"
+
+    export DISPLAY=:0
+    xrdb ~/.Xresources
+    urxvtd -q -o -f
+    echo "urxvt running in daemon mode"
+    echo "Start XMING and use urxtvc"
 fi
 
-if [ -d ~/bin/shell ]; then
-		cd ~/bin/shell
-		for i in $(ls -1); do
-						source $i
-		done
-		unset i
-fi
+
+echo $pwd
+#for i in $(ls -1); do
+#  source $i
+#done
+#unset i
 
 
 
@@ -71,12 +70,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+  # We have color support; assume it's compliant with Ecma-48
+  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+  # a case would tend to support setf rather than setaf.)
+  color_prompt=yes
     else
-	color_prompt=
+  color_prompt=
     fi
 fi
 
@@ -139,7 +138,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-## Vivado 
+## Vivado
 #/opt/Xilinx/Vivado/2015.4/settings64.sh
 #export XILINXD_LICENSE_FILE=2100@sp-bbz2zp1-lt.ensco.win
 #export PATH=/opt/Xilinx/Vivado/2015.4/bin:$PATH

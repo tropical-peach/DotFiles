@@ -51,6 +51,8 @@ URxvt.font:xft:Bitstream Vera Sans Mono:autohint=true:pixelsize=12,\
 	xft:Meslo LG S DZ for Powerline:pixelsize=12,\
 	xft:Terminess Powerline:size=12
 
+URxvt*font: xft:SourceCodePro+Powerline+Awesome Regular:size=12
+
 !Icon for file
 !URxvt*iconFile: /home/steven/Dropbox/Wallpapers/tumblr_mg0th7CodL1qmxcsxo1_500.gif
 !Mouse

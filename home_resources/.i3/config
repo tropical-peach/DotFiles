@@ -172,27 +172,45 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#
-#	#status_command /home/steven/scratch.sh
-#	#status_command i3blocks 
-#	#status_command i3status
-#	position top
-#
-#
-#	colors 
-#	{
-#		background 	#001900
-#		statusline 	#ffffff
-#		separator 	#E62EB8
-#
-#		focused_workspace  #4c7899 #285577 #ffffff
-#		active_workspace   #333333 #5f676a #ffffff
-#		inactive_workspace #333333 #222222 #888888
-#		urgent_workspace   #2f343a #900000 #ffffff
-#	}
-#}
+bar {
 
+	status_command /home/sseppal/.i3/conkybar.sh
+  #status_command i3blocks 
+	#status_command i3status
+	position top
+
+
+	colors 
+	{
+		background 	#001900
+		statusline 	#ffffff
+		separator 	#E62EB8
+
+		focused_workspace  #4c7899 #285577 #ffffff
+		active_workspace   #333333 #5f676a #ffffff
+		inactive_workspace #333333 #222222 #888888
+		urgent_workspace   #2f343a #900000 #ffffff
+	}
+}
+
+bar {
+
+	position bottom
+  status_command i3blocks 
+	#status_command i3status
+
+	colors 
+	{
+		background 	#001900
+		statusline 	#ffffff
+		separator 	#E62EB8
+
+		focused_workspace  #4c7899 #285577 #ffffff
+		active_workspace   #333333 #5f676a #ffffff
+		inactive_workspace #333333 #222222 #888888
+		urgent_workspace   #2f343a #900000 #ffffff
+	}
+}
 
 #
 #
@@ -235,7 +253,8 @@ bindsym $mod+b exec firefox
 bindsym $mod+m exec thunderbird
 bindsym $mod+p exec pidgin
 bindsym $mod+c exec compton
-
+#lock Screen 
+bindsym $mod+l exec i3lock-fancy -p --
 #bindsym $mod+F2 exec "xrandr -s 1920x1080"
 #bindsym $mod+F1 exec "xrandr -s 3200x1800"
 #Change Power Settings
