@@ -18,7 +18,7 @@ WEATHER_TYPES = { "Fair"               : ["☀️",   "🌙"], #pylint: disable=
                   "Cloudy"             : ["☁️",   "☁️"],  #pylint: disable=C0326
                   "Light rain"         : ["🌧️",  "🌧️"], #pylint: disable=C0326
                   "Rain"               : ["🌧️",  "🌧️"], #pylint: disable=C0326
-                 "Heavy Rain"         : ["🌧️",  "🌧️"], #pylint: disable=C0326
+                  "Heavy Rain"         : ["🌧️",  "🌧️"], #pylint: disable=C0326
                   "Light snow"         : ["🌨️",  "🌨️"], #pylint: disable=C0326
                   "Snow"               : ["🌨️",  "🌨️"], #pylint: disable=C0326
                   "Heavy snow"         : ["🌨️",  "🌨️"], #pylint: disable=C0326
@@ -75,12 +75,12 @@ def main():
         rise_fall_available = False
 
     # Get the current weather information.
-    forecast = xml_root.find("forecast").find("tabular").find("time")
-    weather = forecast.find("symbol").attrib.get("name")
-    temperature = forecast.find("temperature").attrib.get("value")
-    wind_direction = forecast.find("windDirection").attrib.get("code")
-    wind_speed = forecast.find("windSpeed").attrib.get("mps")
-    precipitation = forecast.find("precipitation").attrib.get("value")
+    #forecast = xml_root.find("forecast").find("tabular").find("time")
+    weather = open("/home/sseppal/bin/weather/conditions").readline().rstrip()  #ead(forecast.find("symbol").attrib.get("name")
+    temperature    = open("/home/sseppal/bin/weather/temperature").readline().rstrip()#forecast.find("temperature").attrib.get("value")
+    wind_direction = "" #forecast.find("windDirection").attrib.get("code")
+    wind_speed     = open("/home/sseppal/bin/weather/windspeed").readline().rstrip()#forecast.find("windSpeed").attrib.get("mps")
+    precipitation  = 0 #forecast.find("precipitation").attrib.get("value")
 
     # Night time?
     is_night = 0
@@ -105,7 +105,7 @@ def main():
         print(weather + " ", end="")
 
     # Print the temperature and sun times.
-    print(temperature, end="°C ")
+    print(temperature, end=" ")
 
     # Print the sun rise and set time.
     if rise_fall_available:
@@ -114,10 +114,10 @@ def main():
     # Print the precipitation (if there is any).
     if precipitation != "0":
         # Print with a wet umbrella
-        print("| ☔ " + precipitation + "mm", end=" ")
+        print("| ☔ " + str(precipitation) + "mm", end=" ")
 
     # Print wind data.
-    print("| 🍃 " + wind_speed + "m/s " + "(" + wind_direction + ")", end="")
+    print("| 🍃 " + str(wind_speed) , end="")  # after comma  { + "m/s " + "(" + wind_direction + ") }
 
 # Go gadget, go!
 main()
