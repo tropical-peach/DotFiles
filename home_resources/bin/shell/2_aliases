@@ -15,6 +15,7 @@
 
 alias 20183='source  /home/sseppal/pluto/tools/Vivado/2018.3/settings64.sh'
 alias 20191='source  /home/sseppal/pluto/tools/Vivado/2019.1/settings64.sh'
+alias 20202='source  /home/sseppal/pluto/tools/Vivado/2020.2/settings64.sh'
 alias viv='vivado -jvm -patch-module=java.desktop=/home/sseppal/pluto/tools/AR72614.jar'
 
 #------------------------------------------#

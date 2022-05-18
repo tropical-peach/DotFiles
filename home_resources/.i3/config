@@ -248,8 +248,8 @@ bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 #	Program start button 
 #	things.	
 bindsym $mod+b exec firefox
-bindsym $mod+m exec thunderbird
-bindsym $mod+p exec pidgin
+bindsym $mod+m exec evolution
+bindsym $mod+p exec teams 
 bindsym $mod+c exec compton --glx-fshader-win "$(cat ~/.config/matrix_halfs.glsl)" 
 #lock Screen 
 bindsym $mod+l exec i3lock-fancy -p --

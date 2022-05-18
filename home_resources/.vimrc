@@ -49,6 +49,9 @@ Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'w0rp/ale'
 Plugin 'majutsushi/tagbar'
+" A Vim Plugin for Lively Previewing LaTeX PDF Output
+Plugin 'xuhdev/vim-latex-live-preview'
+
 
 "VIM website
 
@@ -62,6 +65,8 @@ filetype plugin indent on    " required
 "
 " END VUNDLE
 "
+
+let g:livepreview_previewer = 'zathura'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
 set laststatus=2
