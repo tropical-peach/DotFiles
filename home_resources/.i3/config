@@ -247,7 +247,7 @@ bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 
 #	Program start button 
 #	things.	
-bindsym $mod+b exec firefox
+bindsym $mod+b exec google-chrome
 bindsym $mod+m exec evolution
 bindsym $mod+p exec teams 
 bindsym $mod+c exec compton --glx-fshader-win "$(cat ~/.config/matrix_halfs.glsl)" 
