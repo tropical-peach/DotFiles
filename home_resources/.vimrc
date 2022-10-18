@@ -1,7 +1,5 @@
 colorscheme ChocolateLiquor
 set background=dark
-let asmsyntax='armasm'
-let filetype_inc='armasm'
 set tabstop=2 shiftwidth=2 expandtab
     
 set softtabstop=0

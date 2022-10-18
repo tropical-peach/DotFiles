@@ -34,7 +34,7 @@ export LM_LICENSE_FILE="1717@s1057583"
 export SNPSLMD_LICENSE_FILE="1709@esslic"
 export XILINXD_LICENSE_FILE="2100@esslic"
 export ALDEC_LICENSE_FILE="27009@esslic"
-export VIMRUNTIME=/usr/share/vim/vim80
+export VIMRUNTIME=/home/$me/gitwa/vim/runtime/
 
 export HISTFILE=~/.shell_history
 export HISTSIZE=1000
