@@ -36,6 +36,10 @@ export XILINXD_LICENSE_FILE="2100@esslic"
 export ALDEC_LICENSE_FILE="27009@esslic"
 export VIMRUNTIME=/home/$me/gitwa/vim/runtime/
 
+# For fpga.py
+export PYTHONPATH=/home/$me/gitwa/pylib/
+export PATH=$PATH:/home/$me/gitwa/pylib/bin/
+
 export HISTFILE=~/.shell_history
 export HISTSIZE=1000
 export SAVEHIST=$HISTSIZE

@@ -64,7 +64,8 @@ urxvt*mouseWheelScrollPage: true
 
 
 !starting Dir
-
+!Perl Dir
+URxvt*perl-lib: /usr/lib/urxvt/perl/
 !Extendos
 URxvt.perl-ext-common: default,matcher,tabbedex,clipboard
 
@@ -78,11 +79,11 @@ URxvt.matcher.pattern.1: \bwww\.[\w-]\.[\w./?&@#-]*[\w/-]
 URxvt.colorUL: #4682B4
 
 !Tabs
-URxvt*tabbed.autohide: true
-URxvt*tabbed.reopen-on-close: no
-URxvt.keysym.Control-t: perl:tabbedex:new_tab
-URxvt.keysym.Control-Shit-M: perl:tabbedex:next_tab
-URxvt.keysym.Control-Shift-N: perl:tabbedex:prev_tab
+!URxvt*tabbed.autohide: true
+!URxvt*tabbed.reopen-on-close: no
+!URxvt.keysym.Control-t: perl:tabbedex:new_tab
+!URxvt.keysym.Control-Shit-M: perl:tabbedex:next_tab
+!URxvt.keysym.Control-Shift-N: perl:tabbedex:prev_tab
 !URxvt.keysym.Control-Shift-Left: perl:tabbedex:move_tab_left
 !URxvt.keysym.Control-Shift-Right: perl:tabbedex:move_tab_right
 !URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
