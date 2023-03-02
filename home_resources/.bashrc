@@ -158,3 +158,7 @@ fi
 export PATH="$PATH:/home/sseppal/pluto/tools/Riviera-PRO/bin"
 
 export PATH="$PATH:/home/sseppal/pluto/tools/Riviera/bin"
+
+export PATH="$PATH:/tools/Riviera-Pro/bin"
+
+export PATH="$PATH:/tools/Riviera/2022/bin"

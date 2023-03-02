@@ -38,7 +38,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'tomtom/tlib_vim'
 Plugin 'vimoutliner/vimoutliner'
-Plugin 'sudar/vim-arduino-syntax'
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -49,6 +48,8 @@ Plugin 'w0rp/ale'
 Plugin 'majutsushi/tagbar'
 " A Vim Plugin for Lively Previewing LaTeX PDF Output
 Plugin 'xuhdev/vim-latex-live-preview'
+" Plugin for markdown viewing
+Plugin 'instant-markdown/vim-instant-markdown'
 
 
 "VIM website
@@ -63,7 +64,6 @@ filetype plugin indent on    " required
 "
 " END VUNDLE
 "
-
 let g:livepreview_previewer = 'zathura'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
@@ -393,3 +393,18 @@ let g:tagbar_type_verilog_systemverilog = {
             \ 'R' : 'property'
         \ },
     \ }
+
+
+filetype plugin on
+"Uncomment to override defaults:
+"let g:instant_markdown_slow = 1
+"let g:instant_markdown_autostart = 0
+"let g:instant_markdown_open_to_the_world = 1
+"let g:instant_markdown_allow_unsafe_content = 1
+"let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_mermaid = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+"let g:instant_markdown_python = 1

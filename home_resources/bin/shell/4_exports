@@ -27,13 +27,12 @@ me=$(whoami)
 export EDITOR=vim
 export PAGER=less
 export LESS="--RAW-CONTROL-CHARS"
-export PATH="/snap/bin/:/opt/synopsis/installer:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/$me/bin:/home/$me/pluto/tools/ModelSim/modeltech/linux_x86_64/"
+export PATH="/snap/bin/:/opt/synopsis/installer:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/$me/bin:/home/$me/pluto/tools/ModelSim/modeltech/linux_x86_64/:/home/$me/.local/bin/"
 export MGLS_LICENSE_FILE="1717@esslic"
 #export LM_LICENSE_FILE="2100@esslic;1717@localhost"
-export LM_LICENSE_FILE="1717@s1057583"
-export SNPSLMD_LICENSE_FILE="1709@esslic"
-export XILINXD_LICENSE_FILE="2100@esslic"
-export ALDEC_LICENSE_FILE="27009@esslic"
+export LM_LICENSE_FILE="2100@vm-licw01.ad.bluehalo.com:2100@lm01.atacorp.com:2100@ata-licence.atacorp.com:27009@lm01.atacorp.com:27009@ata-licence.atacorp.com"
+export XILINXD_LICENSE_FILE="2100@vm-licw01.ad.bluehalo.com:2100@lm01.atacorp.com:2100@ata-licence.atacorp.com"
+export ALDEC_LICENSE_FILE="27009@@ata-licence.atacorp.com:27009@lm01.atacorp.com"
 export VIMRUNTIME=/home/$me/gitwa/vim/runtime/
 
 # For fpga.py
