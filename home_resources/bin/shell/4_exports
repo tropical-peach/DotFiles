@@ -36,8 +36,12 @@ export ALDEC_LICENSE_FILE="27009@@ata-licence.atacorp.com:27009@lm01.atacorp.com
 export VIMRUNTIME=/home/$me/gitwa/vim/runtime/
 
 # For fpga.py
-export PYTHONPATH=/home/$me/gitwa/pylib/
-export PATH=$PATH:/home/$me/gitwa/pylib/bin/
+### auto-gen by /home/sseppala/gitwa/pylib/bin/install.py on 05/17/2023 12:29:38
+export PATH=/home/$me/gitwa/pylib/bin/lin_venv/bin:/home/$me/gitwa/pylib/bin:$PATH
+export PYTHONPATH=/home/$me/gitwa/pylib:$PYTHONPATH
+export SIMLIB_DIR=/tools/compiledLibs/
+
+### end-auto-gen
 
 export HISTFILE=~/.shell_history
 export HISTSIZE=1000

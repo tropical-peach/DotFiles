@@ -14,6 +14,7 @@
 #
 
 alias 20202='source  /tools/Vivado/2020.2/.settings64-Vivado.sh'
+alias 20221='source  /tools/Xilinx/Vivado/2022.1/settings64.sh'
 alias viv='vivado -jvm -patch-module=java.desktop=/home/sseppal/pluto/tools/AR72614.jar'
 
 #------------------------------------------#

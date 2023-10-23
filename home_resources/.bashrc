@@ -162,3 +162,7 @@ export PATH="$PATH:/home/sseppal/pluto/tools/Riviera/bin"
 export PATH="$PATH:/tools/Riviera-Pro/bin"
 
 export PATH="$PATH:/tools/Riviera/2022/bin"
+### auto-gen by /home/sseppala/gitwa/pylib/bin/install.py on 05/17/2023 12:29:38
+export PATH=/home/sseppala/gitwa/pylib/bin/lin_venv/bin:/home/sseppala/gitwa/pylib/bin:$PATH
+export PYTHONPATH=/home/sseppala/gitwa/pylib:$PYTHONPATH
+### end-auto-gen
