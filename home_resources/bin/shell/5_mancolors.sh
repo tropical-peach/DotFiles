@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Author: Malsententia <Malsententia@gmail.com>
 #Purpose: Colorized man pages, with random themes seeded by
 #         the command and/or section. That is, every man page
